@@ -1,0 +1,11 @@
+<launch>
+  <node   pkg="gmapping"   type="slam_gmapping" name="mapping">
+
+    <remap from="scan" to="base_scan" />
+    <param name="map_update_interval" value="0.1" />
+    <param name="delta" value="0.1 "/>
+    <param name="particle" value="1" />
+    <param name="iterations" value="30" />
+    
+  </node>
+</launch>

@@ -1,0 +1,13 @@
+<launch>
+  <param name="robot_description" command="$(find xacro)/xacro.py $(find p2os_urdf)/defs/pioneer3at.xacro" />
+
+
+  <node pkg="robot_state_publisher" type="robot_state_publisher" name="robot_state_publisher" >
+    <param name="publish_frequency" type="double" value="100.0" />
+    <!--param name="tf_prefix" value="/sosp2"/-->
+  </node>
+  <arg name="use_gui" default="false"/>
+  <node pkg="joint_state_publisher" type="joint_state_publisher" name="joint_state_publisher">
+    <param name="use_gui" value="$(arg use_gui)" />
+  </node>
+</launch>

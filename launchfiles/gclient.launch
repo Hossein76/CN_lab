@@ -1,0 +1,3 @@
+<launch>
+    <node pkg="gazebo_ros" type="spawn_model" name="gazebo1"  args="-param robot_description -urdf -z 1 -model baxter" />
+</launch>
